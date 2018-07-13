@@ -1,0 +1,96 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AllTestsNG" verbose="1" >
+    <test name="AdditionOfTwoNumbers" >
+        <parameter name="expression" value="5.25+8.17"/>
+        <parameter name="result" value="13,420"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="SubtractionOfTwoNumbers" >
+        <parameter name="expression" value="6.12-7.13"/>
+        <parameter name="result" value="-1,010"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="MultiplicationOfTwoNumbers" >
+        <parameter name="expression" value="2.01*1.10"/>
+        <parameter name="result" value="2,211"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="DivisionOfTwoNumbers" >
+        <parameter name="expression" value="9.00/3.00"/>
+        <parameter name="result" value="3,000"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="DivisionByNull" >
+        <parameter name="expression" value="-9.99/0.00"/>
+        <parameter name="result" value="Can't divide by zero!"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="NoArithmeticSigns">
+        <parameter name="expression" value="1.001.00"/>
+        <parameter name="result" value="Error: Needed operation is not found. Please check the expression!"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="InvalidInputOfFirstNumber">
+        <parameter name="expression" value="15.25+8.17"/>
+        <parameter name="result" value="The first number is not included in the specified range[-10:+10]. Please check it!"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="InvalidInputOfSecondNumber">
+        <parameter name="expression" value="5.25+18.17"/>
+        <parameter name="result" value="The second number is not included in the specified range[-10:+10]. Please check it!"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="InvalidInputFormatOfFirstNumber">
+        <parameter name="expression" value="9.0-1.00"/>
+        <parameter name="result" value="Invalid input format: The first number must be specified to two decimal places."/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="InvalidInputFormatOfSecondNumber">
+        <parameter name="expression" value="9.00-1.0"/>
+        <parameter name="result" value="Invalid input format: The second number must be specified to two decimal places."/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="FirstNumberNotDouble">
+        <parameter name="expression" value="5/8.00"/>
+        <parameter name="result" value="Invalid input format: The first number must be a decimal number."/>
+        <classes>
+            <class name="calcTest.CalcTest"></class>
+        </classes>
+    </test>
+    <test name="SecondNumberNotDouble">
+        <parameter name="expression" value="5.00/8"/>
+        <parameter name="result" value="Invalid input format: The second number must be a decimal number."/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+    <test name="WorkWithNegativeNumbers">
+        <parameter name="expression" value="-5.11--8.25"/>
+        <parameter name="result" value="3,140"/>
+        <classes>
+            <class name="calcTest.CalcTest"/>
+        </classes>
+    </test>
+
+</suite>
